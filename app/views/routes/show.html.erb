@@ -5,5 +5,15 @@
   <%= @route.name %>
 </p>
 
+<p>
+  <strong>Trains on route :</strong>
+  <% if @route.trains.present? %>
+      <%= @route.trains.title %>
+  <% else %>
+      Not defined
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>
