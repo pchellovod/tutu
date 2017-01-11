@@ -14,6 +14,25 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Stations in route :</strong>
+  <% if @route.railway_stations.present? %>
+      <%= @route.railway_stations.name %>
+  <% else %>
+      Not defined
+  <% end %>
+</p>
+
+<% if @route.railway_stations.empty? %>
+    <p>Поезд следует без остановок</p>
+<% else %>
+    <p> В маршруте есть следующие станции:</p>
+    <ul>
+      <% @route.railway_stations.each do |route| %>
+        <li><%= route.title %></li>
+      <% end %>
+    </ul>
+<% end %>
 
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>
