@@ -10,6 +10,7 @@ class TrainsController < ApplicationController
   # GET /trains/1
   # GET /trains/1.json
   def show
+
   end
 
   # GET /trains/new
@@ -69,6 +70,6 @@ class TrainsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def train_params
-      params.require(:train).permit(:number)
+      params.require(:train).permit(:number, :current_station_id, :route_id)
     end
 end

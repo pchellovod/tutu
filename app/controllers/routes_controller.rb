@@ -6,7 +6,6 @@ class RoutesController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -24,11 +23,9 @@ class RoutesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
 
     if @route.update(route_params)
       redirect_to @route, notice: 'Route updated'
