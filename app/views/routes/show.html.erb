@@ -14,14 +14,14 @@
   <% end %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Stations in route :</strong>
   <% if @route.railway_stations.present? %>
       <%= @route.railway_stations.name %>
   <% else %>
       Not defined
   <% end %>
-</p>
+</p> -->
 
 <% if @route.railway_stations.empty? %>
     <p>Поезд следует без остановок</p>
