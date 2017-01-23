@@ -5,18 +5,13 @@ class Train < ApplicationRecord
   has_many :carriages, before_add: :add_number
 
   def counting_seats(type_carriage, type_seat)
-    Carriage.where('type = ?', type_carriage).sum("#{type_seat}".to_sym)
+    carriage.where('type = ?', type_carriage).sum("#{type_seat}".to_sym)
   end
 
   def current_order_carriages
     order_carriages ? carriages.head : carriages.tail
   end
 
-  private
-
-  def add_number(carriage)
-    carriage.number = carriage.maximum(:number).to_i + 1
-  end
 
   validates :number, presence: true
 end
