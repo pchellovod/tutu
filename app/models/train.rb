@@ -4,6 +4,8 @@ class Train < ApplicationRecord
   has_many :tickets
   has_many :carriages, before_add: :add_number
 
+  validates :number, presence: true
+
   def counting_seats(type_carriage, type_seat)
     carriage.where('type = ?', type_carriage).sum("#{type_seat}".to_sym)
   end
@@ -12,6 +14,4 @@ class Train < ApplicationRecord
     order_carriages ? carriages.head : carriages.tail
   end
 
-
-  validates :number, presence: true
 end
