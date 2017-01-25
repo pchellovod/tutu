@@ -2,8 +2,8 @@
     <%= render 'common/errors', resource: @carriage %>
 
     <div class="field">
-      <%= f.label :type_w, "Тип" %>
-      <%= f.select :type_w, ["Плацкарт","Купе"] %>
+      <%= f.label :type, "Тип" %>
+      <%= f.select :type, ["EconomyCarriage","LuxCarriage", "CoupeCarriage", "SittingCarriage"] %>
     </div>
 
     <div class="filed">
@@ -12,8 +12,8 @@
     </div>
 
     <div class="filed">
-      <%= f.label :low_seats, "Количество нижних мест" %>
-      <%= f.text_field :low_seats %>
+      <%= f.label :bottom_seats, "Количество нижних мест" %>
+      <%= f.text_field :bottom_seats %>
     </div>
 
     <div class="field">

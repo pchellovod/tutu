@@ -5,6 +5,20 @@
   <%= @train.number %>
 </p>
 
+
+<p>
+Carriages of train:
+<br>
+<br>
+  <% if @train.carriages.present? %>
+      <% @train.current_order_carriages.each do |carriage| %>
+          <%= link_to "Вагон #{carriage.number}", carriage_path(carriage) %><br>
+      <% end %>
+  <% else %>
+      This train has no carriages.
+  <% end %>
+</p>
+
 <p>
   <strong>On station:</strong>
   <% if @train.current_station.present? %>
