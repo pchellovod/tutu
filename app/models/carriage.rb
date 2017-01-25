@@ -23,5 +23,4 @@ class Carriage < ApplicationRecord
       self.number ||= max_number.nil? ? 1 : max_number + 1
     end
   end
-  
 end
