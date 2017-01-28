@@ -6,5 +6,21 @@ class RailwayStation < ApplicationRecord
 
   validates :title, presence: true
 
-  scope :ordered, -> { order('index_station ASC') }
+  scope :ordered, -> { joins(:railway_stations_routes).order("railway_stations_routes.position").uniq }
+
+  def update_position(route, position)
+    station_route = station_route(route)
+    station_route.update(position: position) if station_route
+  end
+
+  def position_in(route)
+    station_route(route).try(:position)
+  end
+
+  # scope :ordered, -> { order('index_station ASC') }
+
+  def station_route(route)
+    @station_route ||= railway_stations_routes.where(route: route).first
+  end
+
 end
