@@ -21,7 +21,7 @@ class Carriage < ApplicationRecord
   def add_number
     if train
       max_number = train.carriages.maximum(:number)
-      self.number ||= max_number.nil? ? 1 : max_number + 1
+      self.number.to_s ||= max_number.nil? ? 1 : max_number + 1
     end
   end
 end

@@ -6,9 +6,7 @@ class CarriagesController < ApplicationController
     @carriages = Carriage.all
   end
 
-  def show
-    @carriage = Carriage.find(params[:id])
-  end
+  def show; end
 
   def new
     @carriage = Carriage.new
@@ -20,7 +18,7 @@ class CarriagesController < ApplicationController
     @carriage = @train.carriages.new(carriage_params)
 
     if @carriage.save
-      redirect_to @train
+      redirect_to @train, notice: 'Carriage was successfully created.'
     else
       render :new
     end
