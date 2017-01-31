@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129210120) do
+ActiveRecord::Schema.define(version: 20170131091714) do
 
   create_table "carriages", force: :cascade do |t|
-    t.string   "number"
+    t.integer  "number"
     t.integer  "bottom_seats"
     t.integer  "top_seats"
     t.integer  "train_id"
