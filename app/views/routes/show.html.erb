@@ -5,33 +5,79 @@
   <%= @route.name %>
 </p>
 
+
+<% if @route.trains.empty? %>
+  <p>Поездов на маршруте нет</p>
+<% else %>
+  <p> Поезда на маршруте:</p>
+    <table>
+      <thead>
+      </thead>
+    </table>
+
+      <ul>
+      <% @route.trains.each do |train| %>
+          <li><%= train.number %></li>
+      <% end %>
+      </ul>
+<% end %>
+
 <p>
-  <strong>Trains on route :</strong>
-  <% if @route.trains.present? %>
-      <%= @route.trains %>
+  <strong>Stations:</strong>
+  <% if @route.railway_stations.empty? %>
+    Empty
   <% else %>
-      Not defined
-  <% end %>
+    <table>
+      <thead>
+      <tr>
+       <td width="100px">Name</td>
+       <td>Position</td>
+       <th>Arrival - Departure</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @route.railway_stations.ordered.each do |station| %>
+        <tr>
+          <td><%= station.title%></td>
+          <td>
+            <%= form_tag update_position_railway_station_path(station), method: :patch do %>
+              <%= number_field_tag :position, station.position_in(@route)%>
+              <%= hidden_field_tag :route_id, @route.id %>
+              <%= submit_tag "Изменить" %>
+            <% end %>
+          </td>
+          <td>
+            <%= form_tag update_time_railway_station_path(station), method: :patch do %>
+              <%= time_field_tag :arrival, station.time(@route, :arrival) %>
+              <%= time_field_tag :departure, station.time(@route, :departure) %>
+              <%= hidden_field_tag :route_id, @route.id %>
+              <%= submit_tag 'edit' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    <table>
+    
+<% end %>
 </p>
 
-<!-- <p>
-  <strong>Stations in route :</strong>
-  <% if @route.railway_stations.present? %>
-      <%= @route.railway_stations.name %>
-  <% else %>
-      Not defined
-  <% end %>
-</p> -->
+
 
 <% if @route.railway_stations.empty? %>
-    <p>Поезд следует без остановок</p>
+  <p>Поезд следует без остановок</p>
 <% else %>
-    <p> В маршруте есть следующие станции:</p>
-    <ul>
+  <p> В маршруте есть следующие станции:</p>
+    <table>
+      <thead>
+      </thead>
+    </table>
+
+      <ul>
       <% @route.railway_stations.each do |route| %>
-        <li><%= route.title %></li>
+          <li><%= route.title %></li>
       <% end %>
-    </ul>
+      </ul>
 <% end %>
 
 <%= link_to 'Edit', edit_route_path(@route) %> |

@@ -1,7 +1,9 @@
 class Carriage < ApplicationRecord
   belongs_to :train
+
   validates :number, uniqueness: { scope: :train_id,
     message: 'Number is already in use for this train' }
+    
   before_validation :add_number
 
   scope :tail, -> { order('number DESC') }
@@ -13,7 +15,6 @@ class Carriage < ApplicationRecord
       superclass.model_name
     end
   end
-
 
   private
 

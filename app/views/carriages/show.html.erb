@@ -2,22 +2,14 @@
 
 <p>
   <strong>Тип:</strong>
-  <%= @carriage.type %>,
-  <% if @carriage.bottom_seats.present? %>
-      Нижних мест: <%= @carriage.bottom_seats %>
-  <% end %>
-  <% if @carriage.top_seats.present? %>
-      Верхних мест: <%= @carriage.top_seats %>
-  <% end %>
-  <% if @carriage.side_bottom_seats.present? %>
-      Нижних боковых мест: <%= @carriage.side_bottom_seats %>
-  <% end %>
-  <% if @carriage.side_top_seats.present? %>
-      Верхних боковых мест: <%= @carriage.side_top_seats %>
-  <% end %>
-  <% if @carriage.sitting_seats.present? %>
-      Сидячих мест: <%= @carriage.sitting_seats %>
-  <% end %>
+  <%= @carriage.type %>
+</p>
+<p>
+  <strong>Номер:</strong>
+  <%= @carriage.number %>
+</p>
+
+<%= render @carriage.type.to_s.downcase %>
 
 <% if @carriage.train.nil? %>
     <p>Поезд не назначен</p>
@@ -26,4 +18,10 @@
 <% end %>
 
 <%= link_to 'Изменить', edit_carriage_path(@carriage) %> |
-<%= link_to 'Назад', carriages_path %>
+<%= link_to 'Назад', @carriage.train %>
+
+
+
+
+
+
