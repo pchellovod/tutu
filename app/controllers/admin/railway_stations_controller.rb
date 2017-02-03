@@ -1,5 +1,4 @@
-class RailwayStationsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::RailwayStationsController < Admin::BaseController
   before_action :set_railway_station, only: [:show, :edit, :update, :destroy, :update_position, :update_time]
   before_action :set_route, only: [:update_position, :update_time]
   # GET /railway_stations
@@ -26,7 +25,7 @@ class RailwayStationsController < ApplicationController
       if @railway_station.save
         redirect_to @railway_station, notice: 'Railway station was successfully created.'
       else
-        render :new        
+        render :new
       end
   end
 
@@ -42,7 +41,7 @@ class RailwayStationsController < ApplicationController
   # DELETE /railway_stations/1
   def destroy
     @railway_station.destroy
-    redirect_to railway_stations_url, notice: 'Railway station was successfully destroyed.' 
+    redirect_to railway_stations_url, notice: 'Railway station was successfully destroyed.'
   end
 
   def update_position
