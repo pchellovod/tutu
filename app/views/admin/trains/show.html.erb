@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Number:</strong>
   <%= @train.number %>
@@ -29,7 +27,7 @@
 
 <p>
   <strong>Carriages</strong>
-  <ul> 
+  <ul>
     <% if @train.carriages.present? %>
       <% @train.carriages.each do |car| %>
         <li><%= link_to "Carriage № #{car.number}", [@trains_path, car] %></li>
@@ -41,11 +39,11 @@
 </p>
 
 <p>
-  <%= link_to "Add carriage", new_train_carriage_path(@train) %>
+  <%= link_to 'Add carriage', new_admin_train_carriage_path(@train) %>
 </p>
 
-<%= link_to 'Edit', edit_train_path(@train) %> |
-<%= link_to 'Back', trains_path %>
+<%= link_to 'Edit', edit_admin_train_path(@train) %> |
+<%= link_to 'Back', admin_trains_path %>
 
 
 
