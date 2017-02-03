@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Номер поезда:</strong>
+  <%= @ticket.train.number %>
+</p>
 <p>
   <strong>Станция отправления:</strong>
   <%= @ticket.start_station.title %>
@@ -8,8 +10,9 @@
   <strong>Станция прибытия:</strong>
   <%= @ticket.end_station.title %>
 </p>
-
 <p>
-  <strong>Номер поезда:</strong>
-  <%= @ticket.train.number %>
+  <strong>Пассажир:</strong>
+  <%= @ticket.passenger_name %>
 </p>
+
+<%= link_to 'Tickets list', tickets_path %>

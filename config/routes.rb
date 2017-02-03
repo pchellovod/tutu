@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resource :search, only: [:create, :show]
-  resources :tickets, only: [:new, :create, :show]
+  resources :tickets, except: [:edit, :update]
 
 namespace :admin do
     resources :railway_stations do
