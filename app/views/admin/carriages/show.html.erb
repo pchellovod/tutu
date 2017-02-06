@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Тип:</strong>
+  <%= @carriage.type %>
+</p>
+<p>
+  <strong>Номер:</strong>
+  <%= @carriage.number %>
+</p>
+
+<%= render @carriage.type.to_s.downcase %>
+
+<% if @carriage.train.nil? %>
+    <p>Поезд не назначен</p>
+<% else %>
+    <p>Вагон прикреплён к поезду: <%= @carriage.train.number %></p>
+<% end %>
+
+<%= link_to 'Изменить', edit_admin_carriage_path(@carriage) %> |
+<%= link_to 'Назад', [:admin, @carriage.train] %>
+
+
+
+
+
+

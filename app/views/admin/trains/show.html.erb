@@ -1,0 +1,51 @@
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+
+<!-- <p>
+<strong>Carriages of train:</strong>
+<br>
+<br>
+  <% if @train.carriages.present? %>
+    <% @train.current_order_carriages.each do |carriage| %>
+      <%= link_to "Вагон #{carriage.number}", carriage_path(carriage) %><br>
+    <% end %>
+  <% else %>
+      This train has no carriages.
+  <% end %>
+</p> -->
+
+<p>
+  <strong>On station:</strong>
+  <% if @train.current_station.present? %>
+    <%= @train.current_station.title %>
+  <% else %>
+    Not defined
+  <% end %>
+</p>
+
+<p>
+  <strong>Carriages</strong>
+  <ul>
+    <% if @train.carriages.present? %>
+      <% @train.carriages.each do |car| %>
+        <li><%= link_to "Carriage № #{car.number}", [@trains_path, car] %></li>
+      <% end %>
+      <% else %>
+        This train has no carriages.
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <%= link_to 'Add carriage', new_admin_train_carriage_path(@train) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_train_path(@train) %> |
+<%= link_to 'Back', admin_trains_path %>
+
+
+
+
+
