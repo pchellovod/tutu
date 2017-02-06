@@ -20,4 +20,44 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  common:
+    back: "Back"
+    show: "Show"
+    edit: "Edit"
+    destroy: "Destroy"
+    create: "Create"
+    errors: "Error fill in a form"
+  admin:
+    railway_stations:
+      list: "Stations"
+      new:
+        title: "New station"
+      form:
+        submit: "%{action} station"
+    routes:
+      list: "Routes"
+      new:
+        title: "New route"
+      form:
+        submit: "%{action} route"
+    trains:
+      list: "Trains"
+      new:
+        title: "New train"
+      form:
+        submit: "%{action} train"
+    carriages:
+      list: "Carriages"
+      new:
+        title: "New carriage"
+      form:
+        submit: "%{action} carriage"
+    tickets:
+      list: "Tickets"
+      form:
+        submit: "%{action} ticket"
+  searches:
+    form:
+      submit: "Search"
+  tickets:
+    buy: "Buy ticket"
