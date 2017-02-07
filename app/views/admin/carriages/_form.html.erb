@@ -2,7 +2,7 @@
     <%= render 'common/errors', resource: @carriage %>
 
     <div class="field">
-      <%= f.label :type, "Тип" %>
+      <%= f.label :type, t('.type') %>
       <%= f.select :type, ["EconomyCarriage","LuxCarriage", "CoupeCarriage", "SittingCarriage"] %>
     </div>
 
@@ -32,11 +32,11 @@
     </div>
 
     <div class="field">
-      <%= f.label :train, "Текущий поезд" %>
+      <%= f.label :train_id, t('.train') %>
       <%= f.collection_select :train_id, Train.all, :id, :number %>
     </div>
 
     <div class="actions">
-      <%= f.submit "#{ @carriage.new_record? ? 'Создать' : 'Изменить ' }"%>
+      <%= f.submit t('.submit', action: carriage.new_record? ? t('common.create') : t('common.edit')) %>
     </div>
 <% end %>

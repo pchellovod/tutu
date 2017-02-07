@@ -17,8 +17,8 @@
     <p>Вагон прикреплён к поезду: <%= @carriage.train.number %></p>
 <% end %>
 
-<%= link_to 'Изменить', edit_admin_carriage_path(@carriage) %> |
-<%= link_to 'Назад', [:admin, @carriage.train] %>
+<%= link_to t('common.edit'), edit_admin_carriage_path(@carriage) %> |
+<%= link_to t('common.back'), [:admin, @carriage.train] %>
 
 
 

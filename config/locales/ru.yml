@@ -1,0 +1,51 @@
+ru:
+  common:
+    back: "Назад"
+    show: "Просмотреть"
+    edit: "Изменить"
+    destroy: "Удалить"
+    create: "Создать"
+    errors: "Ошибки заполнения формы"
+  admin:
+    title: "Название"
+    railway_stations:
+      list: "Станции"
+      new:
+        title: "Новая станция"
+      form:
+        submit: "%{action} станцию"
+    routes:
+      list: "Маршруты"
+      new:
+        title: "Новый маршрут"
+      form:
+        submit: "%{action} маршрут"
+    trains:
+      list: "Поезда"
+      new:
+        title: "Новый поезд"
+      form:
+        submit: "%{action} поезд"
+        current_station: "Текущая станция"
+        route: "Маршрут"
+    carriages:
+      list: "Вагоны"
+      new:
+        title: "Новый вагон"
+      form:
+        submit: "%{action} вагон"
+        type: "Вид"
+        train: "Поезд"
+    tickets:
+      list: "Билеты"
+      form:
+        submit: "%{action} билет"
+        user: "Пользователь"
+  searches:
+    form:
+      submit: "Найти"
+      start_station: "Станция отправления"
+      end_station: "Станция назначения"
+      submit: "Найти"
+  tickets:
+    buy: "Купить билет"

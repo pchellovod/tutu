@@ -3,8 +3,8 @@
   <tr>
     <td><%= "#{carriage.type} - #{carriage.number} - #{carriage.train}" %></td>
     <td><%= link_to carriage.train.number, [:admin, carriage.train] %></td>
-    <td><%= link_to 'Показать', admin_carriage_path(carriage) %></td>
-    <td><%= link_to 'Изменить', edit_admin_carriage_path(carriage) %></td>
-    <td><%= link_to 'Удалить', admin_carriage_path(carriage), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    <td><%= link_to t('common.back'), admin_carriage_path(carriage) %></td>
+    <td><%= link_to t('common.edit'), edit_admin_carriage_path(carriage) %></td>
+    <td><%= link_to t('common.destroy'), admin_carriage_path(carriage), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

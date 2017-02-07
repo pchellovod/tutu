@@ -1,7 +1,7 @@
 <h1>Tutu.ru</h1>
 <strong>
-	<p><%= link_to 'Список станций', admin_railway_stations_path %></p>
-	<p><%= link_to 'Список поездов', admin_trains_path %></p>
-	<p><%= link_to 'Список маршрутов', admin_routes_path %></p>
-	<p><%= link_to 'Поиск билетов', search_path %></p>
+    <li><%= link_to t('admin.railway_stations.list'), admin_railway_stations_path %></li>
+    <li><%= link_to t('admin.routes.list'), admin_routes_path %></li>
+    <li><%= link_to t('admin.trains.list'), admin_trains_path %></li>
+    <li><%= link_to t('admin.tickets.list'), admin_tickets_path %></li>
 </strong>
