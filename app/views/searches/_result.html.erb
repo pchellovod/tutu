@@ -1,4 +1,4 @@
-<table>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Train</th>
@@ -17,9 +17,9 @@
         <td><%= @search.end_station.time(train.route, :arrival) %></td>
         <td>
             <% if user_signed_in? && current_user.admin? %>
-              <%= link_to t('tickets.buy'), new_admin_ticket_path(ticket: { train_id: train.id, start_station_id: @search.start_station.id, end_station_id: @search.end_station.id }) %>
+              <%= link_to t('tickets.buy'), new_admin_ticket_path(ticket: { train_id: train.id, start_station_id: @search.start_station.id, end_station_id: @search.end_station.id }), class: "btn btn-warning" %>
           <% else %>
-          <%= link_to t('tickets.buy'), new_ticket_path(ticket: { train_id: train.id, start_station_id: @search.start_station.id, end_station_id: @search.end_station.id }) %>
+          <%= link_to t('tickets.buy'), new_ticket_path(ticket: { train_id: train.id, start_station_id: @search.start_station.id, end_station_id: @search.end_station.id }), class: "btn btn-warning" %>
           <% end %>
         </td>
       </tr>
