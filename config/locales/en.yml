@@ -61,3 +61,12 @@ en:
       submit: "Search"
   tickets:
     buy: "Buy ticket"
+  tickets_mailer:
+    show_tickets: "All the tickets you can see "
+    hello: "Hello, %{name}"
+    buy_ticket:
+      subject: "You bought a ticket"
+      message: "You bought a ticket on the route %{route_name}. View the tickets "
+    cancellation_buy_ticket:
+      subject: "You canceled the ticket purchase"
+      message: "You canceled the purchase from the ticket %{route_name}."

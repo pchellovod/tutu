@@ -1,0 +1,6 @@
+<p><%= t('tickets_mailer.hello', name: @user.name) %>.</p>
+<p><%= t('.message', route_name: @ticket.route_name) %>
+</p>
+<p>
+  <%= t('tickets_mailer.show_tickets') %> <%= link_to t('common.here'), tickets_url %>.
+</p>

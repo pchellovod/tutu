@@ -6,4 +6,20 @@ class Ticket < ApplicationRecord
 
   validates :passenger_name, :passenger_passport, presence: true
 
+  after_create :send_notification
+  after_destroy :notify_cancellation_buy
+
+  def route_name
+    "#{start_station.title} - #{end_station.title}"
+  end
+
+  private
+
+  def send_notification
+    TicketMailer.buy_ticket(self.user, self).deliver_now
+  end
+
+  def notify_cancellation_buy
+    TicketsMailer.cancellation_buy_ticket(self.user, self).deliver_now
+  end
 end

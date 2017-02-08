@@ -6,6 +6,7 @@ ru:
     destroy: "Удалить"
     create: "Создать"
     errors: "Ошибки заполнения формы"
+    here:  "здесь"
   admin:
     title: "Название"
     railway_stations:
@@ -49,3 +50,12 @@ ru:
       submit: "Найти"
   tickets:
     buy: "Купить билет"
+  tickets_mailer:
+    show_tickets: "Все свои билеты вы можете посмотреть "
+    hello: "Привет, %{name}"
+    buy_ticket:
+      subject: "Вы купили билет"
+      message: "Вы купили билет по маршруту %{route_name}. Посмотреть билет вы можете "
+    cancellation_buy_ticket:
+      subject: "Вы отменили покупку билета"
+      message: "Вы отменили покупку билета по маршруту %{route_name}."
