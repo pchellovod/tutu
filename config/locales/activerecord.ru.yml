@@ -1,0 +1,48 @@
+ru:
+  activerecord:
+    models:
+      user: "Пользователь"
+      railway_station: "Станция"
+      route: "Маршрут"
+      train: "Поезд"
+      carriage: "Вагон"
+      ticket: "Билет"
+    attributes:
+      railway_station:
+        title: "Название"
+      route:
+        name: "Название"
+      train:
+        number: "Номер"
+        current_station_id: "Текущая станция"
+        route_id: "Маршрут"
+        route: "Маршрут"
+      carriage:
+        upper_seats: "Верхние места"
+        lower_seats: "Нижние места"
+        side_upper_seats: "Боковые верхние места"
+        side_lower_seats: "Боковые нижние места"
+        sitting_seats: "Сидячие места"
+        type_id: "Вид"
+        train_id: "Поезд"
+      ticket:
+        user_id: "Пользователь"
+        passenger_name: "Пассажир"
+        passenger_passport: "Паспортные данные"
+      start_station: "Начальная станция"
+      end_station: "Конечная станция"
+      user:
+        name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+        password_confirmation: "Подверждение пароля"
+      search:
+        start_station_id: "Станция отпрваления"
+        end_station_id: "Станция назначения"
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+        taken: "уже используется"
+        too_short: "слишком короткий"
+        confirmation: "не совпадает"
+        not_a_number: "не число"

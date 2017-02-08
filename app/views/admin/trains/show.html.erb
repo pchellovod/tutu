@@ -39,11 +39,11 @@
 </p>
 
 <p>
-  <%= link_to 'Add carriage', new_admin_train_carriage_path(@train) %>
+  <%= link_to t('admin.carriages.new.title'), new_admin_train_carriage_path(@train) %>
 </p>
 
-<%= link_to 'Edit', edit_admin_train_path(@train) %> |
-<%= link_to 'Back', admin_trains_path %>
+<%= link_to t('common.edit'), edit_admin_train_path(@train) %> |
+<%= link_to t('common.back'), admin_trains_path %>
 
 
 

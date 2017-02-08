@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
-  root 'welcome#index'
+  root 'searches#show'
 
-  resource :search, only: [:create, :show]
+  resource :search, only: [:new, :create, :show, :create]
   resources :tickets, except: [:edit, :update]
 
 namespace :admin do
+    resources :dashboards, only: [:index]
     resources :railway_stations do
       patch :update_position, on: :member
       patch :update_time, on: :member
