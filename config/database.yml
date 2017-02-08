@@ -20,13 +20,6 @@ test:
   <<: *default
   database: tutu_test
 
-production:
-  <<: *default
-  database:
-
-
-
-
 
 
 # default: &default
