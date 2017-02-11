@@ -1,19 +1,37 @@
-<p>
-  <strong>Номер поезда:</strong>
-  <%= @ticket.train.number %>
-</p>
-<p>
-  <strong>Станция отправления:</strong>
-  <%= @ticket.start_station.title %>
-</p>
-<p>
-  <strong>Станция прибытия:</strong>
-  <%= @ticket.end_station.title %>
-</p>
-<p>
-  <strong>Пассажир:</strong>
-  <%= @ticket.passenger_name %>
-  <%= @ticket.passenger_passport %>
-</p>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+        <h1>Ticket</h1>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10">
+      <p>
+        <strong>Train number:</strong>
+        <%= @ticket.train.number %>
+      </p>
+      <p>
+        <strong>Start station:</strong>
+        <%= @ticket.start_station.title %>
+      </p>
+      <p>
+        <strong>End station:</strong>
+        <%= @ticket.end_station.title %>
+      </p>
 
-<%= link_to t('common.back'), tickets_path %>
+      <p>
+        <strong>Passenger:</strong>
+        <%= @ticket.passenger_name %>,
+        <%= @ticket.passenger_passport %>
+      </p>
+    </div>
+    <div class="col-md-2">
+      <div class="col-md-2">
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to t('common.back'), tickets_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

@@ -4,7 +4,7 @@
   <td><%= ticket.end_station.title %></td>
   <td><%= ticket.passenger_name %></td>
   <td>
-    <%= link_to t('common.show'), ticket %>
-    <%= link_to t('common.destroy'), ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to t('common.show'), ticket, class: "text-info" %>
+    <%= link_to t('common.destroy'), ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %>
   </td>
 </tr>

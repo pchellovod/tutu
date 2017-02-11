@@ -1,3 +1,5 @@
+<div class="row">
+<div class="col-md-8 col-md-offset-1">
 <%= form_for ticket do |f| %>
   <%= render 'common/errors', resource: ticket %>
 
@@ -5,17 +7,19 @@
   <%= f.hidden_field :start_station_id %>
   <%= f.hidden_field :end_station_id %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :passenger_name %>
-    <%= f.text_field :passenger_name %>
+    <%= f.text_field :passenger_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :passenger_passport %>
-    <%= f.text_field :passenger_passport %>
+    <%= f.text_field :passenger_passport, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit t('tickets.buy') %>
+  <div class="actions form-group">
+    <%= f.submit t('tickets.buy'), class: "btn btn-primary" %>
   </div>
 <% end %>
+</div>
+</div>

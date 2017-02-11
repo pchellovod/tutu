@@ -1,27 +1,26 @@
-<%= form_for([:admin, @train]) do |f| %>
-  <%= render 'common/errors', resource: @train %>
+<div class="row">
+<div class="col-md-8 col-md-offset-1">
+<%= form_for([:admin, train]) do |f| %>
+  <%= render 'common/errors', resource: train %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :number %>
-    <%= f.text_field :number %>
+    <%= f.text_field :number, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :order_carriages %>
-    <%= f.check_box :order_carriages %>
-  </div>
-
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :current_station_id, t('.current_station') %>
-    <%= f.collection_select :current_station_id, RailwayStation.all, :id, :title %>
+    <%= f.collection_select :current_station_id, RailwayStation.all, :id, :title, {}, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :route_id, t('.route') %>
-    <%= f.collection_select :route_id, Route.all, :id, :name %>
+    <%= f.collection_select :route_id, Route.all, :id, :name, {},  class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit t('.submit', action: train.new_record? ? t('common.create') : t('common.edit')) %>
+    <%= f.submit t('.submit', action: train.new_record? ? t('common.create') : t('common.edit')), class: "btn btn-success" %>
   </div>
 <% end %>
+</div>
+</div>

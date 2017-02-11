@@ -1,0 +1,35 @@
+<ul>
+  <li>Number:
+    <% carriages.ordered(@train.sorting_cars_head).each do |carriage| %>
+      <%= link_to carriage.number, admin_carriage_path(carriage) %>
+    <% end %>
+  </li>
+</ul>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Type carriage</th>
+      <th>Number cars</th>
+      <th>Upper</th>
+      <th>Lower</th>
+      <th>Side upper</th>
+      <th>Side lower</th>
+      <th>Sitting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% carriages.map(&:type).uniq.each do |carriage_type| %>
+      <tr>
+        <td><%= carriage_type %></td>
+        <td><%= @train.count_carriages_by_type(carriage_type) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :upper_seats) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :lower_seats) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :side_upper_seats) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :side_lower_seats) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :sitting_seats) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
