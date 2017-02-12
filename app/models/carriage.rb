@@ -3,7 +3,7 @@ class Carriage < ApplicationRecord
 
   validates :number, uniqueness: { scope: :train_id,
     message: 'Number is already in use for this train' }
-    
+
   before_validation :add_number
 
   scope :tail, -> { order('number DESC') }

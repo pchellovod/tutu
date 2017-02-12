@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-
-  root 'searches#show'
+  root 'welcome#index'
 
   resource :search, only: [:create, :show]
   resources :tickets, except: [:edit, :update]
