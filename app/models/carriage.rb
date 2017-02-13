@@ -4,11 +4,6 @@ class Carriage < ApplicationRecord
   validates :number, uniqueness: { scope: :train_id,
     message: 'Number is already in use for this train' }
 
-  before_validation :add_number
-
-  scope :tail, -> { order('number DESC') }
-  scope :head, -> { order('number ASC') }
-
   def self.inherited(base)
     super
     def base.model_name
@@ -16,12 +11,20 @@ class Carriage < ApplicationRecord
     end
   end
 
+  before_validation :add_number
+
+  scope :coupe,    -> { where(type: 'CoupeCarriage') }
+  scope :economy,  -> { where(type: 'EconomyCarriage') }
+  scope :sitting,  -> { where(type: 'SittingCarriage') }
+  scope :lux, -> { where(type: 'LuxCarriage') }
+  scope :ordered, ->(asc = true) { order(number: asc ? :asc : :desc) }
+
   private
 
   def add_number
     if train
-      max_number = train.carriages.maximum(:number)
-      self.number ||= max_number.nil? ? 1 : max_number + 1
+      max_number = Carriage.where(train: train).maximum(:number)
+      self.number ||= max_number.nil? ? 1 : max_number.to_i + 1
     end
   end
 end
