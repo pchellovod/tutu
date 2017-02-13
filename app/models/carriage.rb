@@ -16,7 +16,7 @@ class Carriage < ApplicationRecord
   scope :coupe,    -> { where(type: 'CoupeCarriage') }
   scope :economy,  -> { where(type: 'EconomyCarriage') }
   scope :sitting,  -> { where(type: 'SittingCarriage') }
-  scope :business, -> { where(type: 'BusinessCarriage') }
+  scope :lux, -> { where(type: 'LuxCarriage') }
   scope :ordered, ->(asc = true) { order(number: asc ? :asc : :desc) }
 
   private
