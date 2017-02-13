@@ -1,6 +1,6 @@
 <ul>
   <li>Number:
-    <% carriages.ordered(@train.sorting_cars_head).each do |carriage| %>
+    <% carriages.ordered(@train.order_carriages).each do |carriage| %>
       <%= link_to carriage.number, admin_carriage_path(carriage) %>
     <% end %>
   </li>
@@ -23,10 +23,10 @@
       <tr>
         <td><%= carriage_type %></td>
         <td><%= @train.count_carriages_by_type(carriage_type) %></td>
-        <td><%= @train.count_seats_by_type(carriage_type, :upper_seats) %></td>
-        <td><%= @train.count_seats_by_type(carriage_type, :lower_seats) %></td>
-        <td><%= @train.count_seats_by_type(carriage_type, :side_upper_seats) %></td>
-        <td><%= @train.count_seats_by_type(carriage_type, :side_lower_seats) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :top_seats) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :bottom_seats) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :side_top_seats) %></td>
+        <td><%= @train.count_seats_by_type(carriage_type, :side_bottom_seats) %></td>
         <td><%= @train.count_seats_by_type(carriage_type, :sitting_seats) %></td>
       </tr>
     <% end %>
