@@ -1,25 +1,40 @@
-<p>
-  <strong>User:</strong>
-  <%= @ticket.user.email %>
-</p>
-
-<p>
-  <strong>Train number:</strong>
-  <%= @ticket.train.number %>
-</p>
-<p>
-  <strong>Start station:</strong>
-  <%= @ticket.start_station.title %>
-</p>
-<p>
-  <strong>End station:</strong>
-  <%= @ticket.end_station.title %>
-</p>
-
-<p>
-  <strong>Passenger:</strong><br>
-  name: <%= @ticket.passenger_name %><br>
-  passport: <%= @ticket.passenger_passport %>
-</p>
-
-<%= link_to t('common.back'), admin_tickets_path %>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h1>Ticket</h1>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10">
+      <p>
+        <strong>User:</strong>
+        <%= @ticket.user.email %>
+      </p>
+      <p>
+        <strong>Train number:</strong>
+        <%= @ticket.train.number %>
+      </p>
+      <p>
+        <strong>Start station:</strong>
+        <%= @ticket.start_station.title %>
+      </p>
+      <p>
+        <strong>End station:</strong>
+        <%= @ticket.end_station.title %>
+      </p>
+      <p>
+        <strong>Passenger:</strong><br>
+        name: <%= @ticket.passenger_name %><br>
+        passport: <%= @ticket.passenger_passport %>
+      </p>
+    </div>
+    <div class="col-md-2">
+      <div class="col-md-2">
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to t('common.back'), admin_tickets_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

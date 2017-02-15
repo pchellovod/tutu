@@ -1,17 +1,24 @@
-<h2>Buy ticket</h2>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Buy ticket</h2>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-12">
+    <p>
+      <strong>Train number:</strong>
+        <%= @train.number %>
+    </p>
+    <p>
+      <strong>Start station:</strong>
+      <%= @start_station.title %>
+    </p>
+    <p>
+      <strong>End station:</strong>
+      <%= @end_station.title %>
+    </p>
 
-<p>
-  <strong>Train number:</strong>
-    <%= @train.number %>
-</p>
-<p>
-  <strong>Start station:</strong>
-  <%= @start_station.title %>
-</p>
-<p>
-  <strong>End station:</strong>
-  <%= @end_station.title %>
-</p>
-
-<h3>Passenger info<h3>
-<%= render 'form', ticket: @ticket %>
+    <h3>Passenger info:</h3>
+    <%= render 'form', ticket: @ticket %>
+</div>
+</div>
