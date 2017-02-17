@@ -1,30 +1,22 @@
-<h1>Railway Stations</h1>
-
-
-<br>
-<br>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @railway_stations.each do |railway_station| %>
-      <tr>
-        <td><%= railway_station.title %></td>
-        <td><%= link_to t('common.show'), [:admin, railway_station] %></td>
-        <td><%= link_to t('common.edit'), edit_admin_railway_station_path(railway_station) %></td>
-        <td><%= link_to t('common.destroy'), [:admin, railway_station], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to t('admin.railway_stations.new.title'), new_admin_railway_station_path %>
-
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <h1>Railway Stations
+    <span class="pull-right"><small>
+    <%= link_to t('admin.railway_stations.new.title'), new_admin_railway_station_path, class: "btn btn-success" %>
+    </small></span>
+  </h1>
+  </div>
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th colspan="3">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @railway_stations %>
+      </tbody>
+    </table>
+</div>
+</div>

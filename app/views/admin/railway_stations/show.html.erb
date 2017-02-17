@@ -1,18 +1,37 @@
-<p>
-  <strong>Title:</strong>
-  <%= @railway_station.title %>
-</p>
-
-<% if @railway_station.routes.empty? %>
-    <p> Станция не входит ни в один маршрут</p>
-<% else %>
-    <p> Станция входит в следующие маршруты:</p>
-    <ul>
-      <% @railway_station.routes.each do |route| %>
-        <li><%= route.name %></li>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Railway Station</h1>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10">
+      <p>
+        <strong>Title:</strong>
+        <%= @railway_station.title %>
+      </p>
+      <p>
+        <strong>Station in routes:</strong>
+      <% if @railway_station.routes.empty? %>
+        Station is not included in one route.
+      <% else %>
+        <!-- Station is included in the following routes: -->
+        <ul>
+          <% @railway_station.routes.each do |route| %>
+          <li><%= route.name %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-<% end %>
-
-<%= link_to t('common.edit'), edit_admin_railway_station_path(@railway_station) %> |
-<%= link_to t('common.back'), admin_railway_stations_path %>
+    </div>
+    <div class="col-md-2">
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to t('common.edit'), edit_admin_railway_station_path(@railway_station), class: "text-success" %>
+        </li>
+        <li>
+          <%= link_to t('common.back'), admin_railway_stations_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
