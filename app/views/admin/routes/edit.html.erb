@@ -1,6 +1,25 @@
-<h1>Edit Route</h1>
-
-<%= render 'form' %>
-
-<%= link_to t('common.show'), [:admin, @route] %> |
-<%= link_to t('common.back'), admin_routes_path %>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Editing Route</h1>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+          <%= render 'form', route: @route, hidden: false %>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to t('common.show'), [:admin, @route], class: "text-info" %></li>
+        <li>
+          <%= link_to t('common.back'), admin_routes_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
