@@ -1,27 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <h1>Carriage</h1>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10">
+      <p>
+        <strong>Type:</strong>
+        <%= @carriage.type %>
+      </p>
 
-<p>
-  <strong>Тип:</strong>
-  <%= @carriage.type %>
-</p>
-<p>
-  <strong>Номер:</strong>
-  <%= @carriage.number %>
-</p>
+      <%= render "#{@carriage.type.underscore}", carriage: @carriage %>
 
-<%= render @carriage.type.to_s.downcase %>
-
-<% if @carriage.train.nil? %>
-    <p>Поезд не назначен</p>
-<% else %>
-    <p>Вагон прикреплён к поезду: <%= @carriage.train.number %></p>
-<% end %>
-
-<%= link_to t('common.edit'), edit_admin_carriage_path(@carriage) %> |
-<%= link_to t('common.back'), [:admin, @carriage.train] %>
-
-
-
-
-
-
+      <p>
+        <strong>Train:</strong>
+        <%= @carriage.train.number %>
+      </p>
+    </div>
+    <div class="col-md-2">
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to t('common.edit'), edit_admin_carriage_path(@carriage), class: "text-success" %>
+        </li>
+        <li>
+          <%= link_to t('common.back'), [:admin, @carriage.train] %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

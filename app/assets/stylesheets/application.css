@@ -17,3 +17,7 @@
 .actions-find {
   padding-top: 25px;
 }
+
+.hidden-field {
+  display: none;
+}
