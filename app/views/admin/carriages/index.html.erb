@@ -1,25 +1,30 @@
-<h1>Вагоны</h1>
-
-<%= link_to 'Главная страница', welcome_index_path %>
-<br>
-<br>
-
-
-<table>
-  <thead>
-  <tr>
-    <th>Тип</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-    <%= render 'carriage', carriages: @carriages %>
-  </tbody>
-</table>
-
-<br>
-
-
-<%= link_to t('admin.carriages.new.title'), new_admin_train_carriage_path %>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Carriages
+      <span class="pull-right"><small>
+        <%= link_to t('admin.carriages.new.title'), new_admin_train_carriage_path, class: "btn btn-success" %>
+      </small></span>
+    </h1>
+    </div>
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Upper seats</th>
+          <th>Lower seats</th>
+          <th>Side Upper seats</th>
+          <th>Side Lower seats</th>
+          <th>Sitting seats</th>
+          <th>Num in train</th>
+          <th>Train</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "carriage", collection: @carriages %>
+      </tbody>
+    </table>
+</div>
+</div>
 

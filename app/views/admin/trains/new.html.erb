@@ -5,7 +5,11 @@
   </div>
   <div class="panel-body">
     <div class="col-md-10">
-      <%= render 'form', train: @train %>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+        <%= render 'form', train: @train, hidden: false %>
+        </div>
+      </div>
   </div>
   <div class="col-md-2">
       <ul class="list-unstyled">

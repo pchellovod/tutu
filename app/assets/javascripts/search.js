@@ -6,6 +6,8 @@ $(document).ready(function() {
         start_station = $(this).find('#search_start_station_id');
         end_station = $(this).find('#search_end_station_id');
 
+          console.log(end_station);
+
         if (start_station.val() == end_station.val()) {
             alert('Одинаковые станции');
 

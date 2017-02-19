@@ -1,5 +1,19 @@
-<h1><%= t('.title') %></h1>
-
-<%= render 'form', railway_station: @railway_station %>
-
-<%= link_to t('common.back'), admin_railway_stations_path %>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1><%= t('.title') %></h1>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10">
+      <%= render 'form', railway_station: @railway_station, hidden: false %>
+  </div>
+  <div class="col-md-2">
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to t('common.back'), admin_railway_stations_path, class: "text-success" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

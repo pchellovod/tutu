@@ -1,6 +1,22 @@
-<h1>Изменить вагон</h1>
-
-<%= render 'form', carriage: @carriage %>
-
-<%= link_to t('common.show'), admin_carriage_path(@carriage) %> |
-<%= link_to t('common.back'), [:admin, @carriage.train] %>
+<div class="row">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Editing Carriage</h1>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-10">
+    <%= render 'form', carriage: @carriage %>
+    </div>
+    <div class="col-md-2">
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to t('common.show'), admin_carriage_path(@carriage), class: "text-info" %>
+        </li>
+        <li>
+          <%= link_to t('common.back'), [:admin, @carriage.train] %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
