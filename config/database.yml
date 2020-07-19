@@ -6,8 +6,11 @@
 #
 default: &default
   adapter: postgresql
+  encoding: unicode
+  database: sample_postgres_development
   pool: 5
-  timeout: 5000
+  username: sample_postgres
+  password:
 
 development:
   <<: *default
