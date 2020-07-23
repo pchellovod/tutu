@@ -6,8 +6,11 @@
 #
 default: &default
   adapter: postgresql
+  encoding: unicode
+  database: tutu_db
   pool: 5
-  timeout: 5000
+  username: tutu_user
+  password: qwerty
 
 development:
   <<: *default
