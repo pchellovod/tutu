@@ -10,16 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2017_02_08_195506) do
-=======
-ActiveRecord::Schema.define(version: 0) do
->>>>>>> 5a7d74be48b591c481c325836ae625c591f48242
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "carriages", id: :serial, force: :cascade do |t|
     t.string "number"
     t.integer "bottom_seats"
@@ -103,6 +98,4 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-=======
->>>>>>> 5a7d74be48b591c481c325836ae625c591f48242
 end
