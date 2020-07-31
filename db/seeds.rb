@@ -12,3 +12,5 @@ r1 = Route.new(name: 'Omsk - Moscow')
 r1.railway_stations << rs1
 r1.railway_stations << rs2
 t1.current_station << rs1
+
+
