@@ -5,7 +5,7 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'pg', '1.1.4'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -34,6 +34,7 @@ gem 'rails_12factor'
 gem 'postmark-rails', '>=0.10.0'
 
 gem 'pry-rails'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
