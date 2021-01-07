@@ -12,22 +12,47 @@
 # r1.railway_stations << rs1
 # r1.railway_stations << rs2
 # t1.current_station << rs1
-
+# ActiveRecord::Migration.drop_table(:trains)
+# ActiveRecord::Migration.create_table(:trains)
+#
+# ActiveRecord::Migration.drop_table(:routes)
+# ActiveRecord::Migration.create_table(:routes)
+#
+# ActiveRecord::Migration.drop_table(:users)
+# ActiveRecord::Migration.create_table(:users)
+#
+# ActiveRecord::Migration.drop_table(:railway_stations)
+# ActiveRecord::Migration.create_table(:railway_stations)
+#
+# ActiveRecord::Migration.drop_table(:tickets)
+# ActiveRecord::Migration.create_table(:tickets)
+#
+# ActiveRecord::Migration.drop_table(:carriages)
+# ActiveRecord::Migration.create_table(:carriages)
+#
+#
+#
+#
 10.times do
   RailwayStation.create(
       title: Faker::Address.city
   )
 end
-
-10.times do
-  Route.create(
-      name: "#{Faker::Address.city} - #{Faker::Address.city}"
-  )
-end
-
-
-10.times do
-  Train.create(
-      number: Faker::Address.building_number
-  )
-end
+#
+# 10.times do
+#   Route.create(
+#       name: "#{Faker::Address.city} - #{Faker::Address.city}"
+#   )
+# end
+#
+#
+# 10.times do
+#   Train.create(
+#       number: Faker::Address.building_number
+#   )
+# end
+#
+route_1 = Route.new
+route_1.railway_stations << RailwayStation.first
+route_1.railway_stations << RailwayStation.second
+route_1.save
