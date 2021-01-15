@@ -6,6 +6,7 @@
      <%= render 'form', railway_station: railway_station, hidden: true %>
   </td>
   <td><%= link_to t('common.show'), [:admin, railway_station], class: "text-info" %></td>
-  <td><%= link_to t('common.edit'), '', class: ["text-success", "edit_station"], data: { station_id: railway_station.id } %></td>
+  <td><%= link_to t('common.edit'), 'edit_admin_railway_station_path(@railway_station)', class: ["text-success", "edit_station"], data: { station_id: railway_station.id } %></td>
   <td><%= link_to t('common.destroy'), [:admin, railway_station], method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %></td>
 </tr>
+
