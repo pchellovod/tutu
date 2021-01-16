@@ -56,3 +56,10 @@ route_1 = Route.new
 route_1.railway_stations << RailwayStation.first
 route_1.railway_stations << RailwayStation.second
 route_1.save
+
+10.times do
+  route = Route.new
+  rand_station = RailwayStation.order(Arel.sql('RANDOM()')).first
+  route.railway_stations << rand_station
+  route.save
+end
